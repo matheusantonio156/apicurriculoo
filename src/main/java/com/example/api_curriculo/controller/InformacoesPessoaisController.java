@@ -32,9 +32,8 @@ public class InformacoesPessoaisController {
     }
 
     @PostMapping
-    public ResponseEntity<InformacoesPessoais> adicionar(@RequestBody InformacoesPessoais informacoesPessoais) {
-        InformacoesPessoais novaInformacao = informacoesPessoaisRepository.save(informacoesPessoais);
-        return ResponseEntity.ok(novaInformacao);
+    public InformacoesPessoais adicionar(@RequestBody InformacoesPessoais informacoesPessoais) {
+        return informacoesPessoaisRepository.save(informacoesPessoais);
     }
 
     // Adicione outros métodos conforme necessário (PUT, DELETE, etc.)

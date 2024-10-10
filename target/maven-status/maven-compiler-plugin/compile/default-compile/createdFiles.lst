@@ -1,0 +1,7 @@
+com\example\api_curriculo\entity\InformacoesPessoais.class
+com\example\api_curriculo\repository\ExperienciaRepository.class
+com\example\api_curriculo\repository\InformacoesPessoaisRepository.class
+com\example\api_curriculo\ApicurriculoApplication.class
+com\example\api_curriculo\controller\InformacoesPessoaisController.class
+com\example\api_curriculo\controller\ExperienciaController.class
+com\example\api_curriculo\entity\Experiencia.class

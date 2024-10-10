@@ -24,6 +24,13 @@ public class InformacoesPessoaisController {
         return ResponseEntity.ok(informacoes);
     }
 
+    @GetMapping("/{id}")
+    public ResponseEntity<?> findById(@PathVariable Long id) {
+        return informacoesPessoaisRepository.findById(id)
+            .map(informacoes -> ResponseEntity.ok(informacoes))
+            .orElse(ResponseEntity.notFound().build());
+    }
+
     @PostMapping
     public InformacoesPessoais adicionar(@RequestBody InformacoesPessoais informacoesPessoais) {
         return informacoesPessoaisRepository.save(informacoesPessoais);

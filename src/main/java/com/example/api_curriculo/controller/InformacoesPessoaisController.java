@@ -24,17 +24,17 @@ public class InformacoesPessoaisController {
         return ResponseEntity.ok(informacoes);
     }
 
-   @GetMapping("/{id}")
-public ResponseEntity<?> findById(@PathVariable Long id) {
-    return informacoesPessoaisRepository.findById(id)
-        .map(informacoes -> ResponseEntity.ok(informacoes))
-        .orElse(ResponseEntity.notFound().build());
-}
-
+    @GetMapping("/{id}")
+    public ResponseEntity<?> findById(@PathVariable Long id) {
+        return informacoesPessoaisRepository.findById(id)
+            .map(informacoes -> ResponseEntity.ok(informacoes))
+            .orElse(ResponseEntity.notFound().build());
+    }
 
     @PostMapping
-    public InformacoesPessoais adicionar(@RequestBody InformacoesPessoais informacoesPessoais) {
-        return informacoesPessoaisRepository.save(informacoesPessoais);
+    public ResponseEntity<InformacoesPessoais> adicionar(@RequestBody InformacoesPessoais informacoesPessoais) {
+        InformacoesPessoais novaInformacao = informacoesPessoaisRepository.save(informacoesPessoais);
+        return ResponseEntity.ok(novaInformacao);
     }
 
     // Adicione outros métodos conforme necessário (PUT, DELETE, etc.)

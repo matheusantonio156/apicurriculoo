@@ -1,4 +1,4 @@
-package com.example.api_curriculo.entity;
+ppackage com.example.api_curriculo.entity;
 
 import jakarta.persistence.*;
 import lombok.Data;
@@ -12,9 +12,10 @@ public class Experiencia {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String cargo;  // Ex: Desenvolvedor de Software
+    private String cargo;  
     private String empresa;
     private String dataInicio;
     private String dataFim;
-    private String descricao;  // Descrição do trabalho realizado
+    private String descricao;  
+
 }

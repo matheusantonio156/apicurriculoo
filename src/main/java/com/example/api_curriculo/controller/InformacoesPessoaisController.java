@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.Map;
 
 @RestController
-@RequestMapping("/api/informacoes")  // Mantém a consistência com o primeiro controller
+@RequestMapping("/api/informacoes")  
 public class InformacoesPessoaisController {
 
     @Autowired
@@ -40,7 +40,9 @@ public class InformacoesPessoaisController {
                 .map(existente -> {
                     existente.setNome(informacoes.getNome());
                     existente.setEmail(informacoes.getEmail());
-                    // Adicione outros campos que precisar atualizar
+                    existente.setTelefone(informacoes.getTelefone());
+                    existente.setEndereco(informacoes.getEndereco());
+                    existente.setResumo(informacoes.getResumo());
                     informacoesPessoaisRepository.save(existente);
                     return ResponseEntity.ok(existente);
                 })
@@ -56,7 +58,6 @@ public class InformacoesPessoaisController {
         return ResponseEntity.notFound().build();
     }
 
-    // Método separado para retornar informações pessoais fixas
     @GetMapping("/detalhes")
     public ResponseEntity<Map<String, String>> obterInformacoesPessoais() {
         Map<String, String> informacoes = new HashMap<>();
@@ -69,4 +70,3 @@ public class InformacoesPessoaisController {
         return ResponseEntity.ok(informacoes);
     }
 }
-

@@ -20,13 +20,11 @@ public class ExperienciaController {
     @GetMapping
     public ResponseEntity<Object> listar() {
         List<Experiencia> experiencias = experienciaRepository.findAll();
-
-        // Verifica se a lista está vazia e retorna uma mensagem padrão
         if (experiencias.isEmpty()) {
-            return ResponseEntity.ok("Minha experiência é ainda nenhuma, nunca trabalhei.");
+            return ResponseEntity.ok("Ainda não tenho experiência profissional.");
+        } else {
+            return ResponseEntity.ok(experiencias);
         }
-
-        return ResponseEntity.ok(experiencias);
     }
 
     @PostMapping

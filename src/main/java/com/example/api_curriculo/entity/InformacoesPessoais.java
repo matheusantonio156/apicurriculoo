@@ -12,9 +12,10 @@ public class InformacoesPessoais {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String nome;
-    private String email;
-    private String telefone;
-    private String endereco;
-    private String resumo;  
+    private String nome;       // Nome completo
+    private String email;      // Email
+    private String endereco;   // Endereço
+    private String idade;      // Idade
+    private String curso;      // Curso
+    private String resumo;     // Resumo pessoal
 }

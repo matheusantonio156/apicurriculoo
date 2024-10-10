@@ -6,10 +6,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @RestController
-@RequestMapping("/api/informacoes")  // Alterado para '/api/informacoes' para manter a consistência com o primeiro controller
+@RequestMapping("/api/informacoes")  // Mantém a consistência com o primeiro controller
 public class InformacoesPessoaisController {
 
     @Autowired
@@ -53,4 +55,18 @@ public class InformacoesPessoaisController {
         }
         return ResponseEntity.notFound().build();
     }
+
+    // Método separado para retornar informações pessoais fixas
+    @GetMapping("/detalhes")
+    public ResponseEntity<Map<String, String>> obterInformacoesPessoais() {
+        Map<String, String> informacoes = new HashMap<>();
+        informacoes.put("nome", "Matheus Antonio");
+        informacoes.put("idade", "21 anos");
+        informacoes.put("endereco", "Recife-PE");
+        informacoes.put("telefone", "(81) 9999-9999");
+        informacoes.put("curso", "Sistemas para Internet");
+
+        return ResponseEntity.ok(informacoes);
+    }
 }
+

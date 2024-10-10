@@ -5,7 +5,9 @@ import com.example.api_curriculo.repository.ExperienciaRepository;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/api/experiencia")
@@ -18,13 +20,17 @@ public class ExperienciaController {
     }
 
     @GetMapping
-    public ResponseEntity<Object> listar() {
+    public ResponseEntity<Map<String, Object>> listar() {
         List<Experiencia> experiencias = experienciaRepository.findAll();
+        Map<String, Object> response = new HashMap<>();
+        
         if (experiencias.isEmpty()) {
-            return ResponseEntity.ok("Ainda não tenho experiência profissional.");
+            response.put("mensagem", "Ainda não tenho experiência profissional.");
         } else {
-            return ResponseEntity.ok(experiencias);
+            response.put("experiencias", experiencias);
         }
+        
+        return ResponseEntity.ok(response);
     }
 
     @PostMapping
@@ -63,3 +69,4 @@ public class ExperienciaController {
         return ResponseEntity.notFound().build();
     }
 }
+

@@ -1,6 +1,5 @@
 package com.example.api_curriculo.entity;
 
-
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -17,5 +16,5 @@ public class InformacoesPessoais {
     private String email;
     private String telefone;
     private String endereco;
-    private String resumo;  // Um breve resumo sobre você
+    private String resumo;  
 }

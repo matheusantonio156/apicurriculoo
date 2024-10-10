@@ -5,17 +5,18 @@ import lombok.Data;
 
 @Data
 @Entity
-@Table(name = "informacoes_pessoais") // Certifique-se de que a tabela no banco de dados tenha o mesmo nome
+@Table(name = "informacoes_pessoais")
 public class InformacoesPessoais {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String nome;
-    private String email;
-    private String endereco;
-    private String resumo;
-    private int idade; // Utilize int para idade
-    private String curso;
+    private String endereco;   // Endereço da pessoa
+    private String nome;       // Nome da pessoa
+    private String telefone;   // Telefone da pessoa
+    private String email;      // Email da pessoa
+    private String resumo;     // Resumo sobre a pessoa
+    private int idade;         // Idade da pessoa
+    private String curso;      // Curso que a pessoa está fazendo
 }

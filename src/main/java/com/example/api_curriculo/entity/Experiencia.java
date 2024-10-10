@@ -12,10 +12,10 @@ public class Experiencia {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String cargo;  
-    private String empresa;
-    private String dataInicio;
-    private String dataFim;
     private String descricao;  
+    private String nome;
+    private String idade;
+    private String endereço;
+    private String curso;  
 
 }

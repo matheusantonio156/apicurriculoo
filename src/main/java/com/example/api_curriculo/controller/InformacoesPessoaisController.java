@@ -35,6 +35,4 @@ public class InformacoesPessoaisController {
     public InformacoesPessoais adicionar(@RequestBody InformacoesPessoais informacoesPessoais) {
         return informacoesPessoaisRepository.save(informacoesPessoais);
     }
-
-    // Adicione outros métodos conforme necessário (PUT, DELETE, etc.)
 }

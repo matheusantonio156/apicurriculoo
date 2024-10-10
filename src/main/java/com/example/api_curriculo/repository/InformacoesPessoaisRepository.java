@@ -1,7 +1,10 @@
 package com.example.api_curriculo.repository;
 
-import org.springframework.data.jpa.repository.JpaRepository;
 import com.example.api_curriculo.entity.InformacoesPessoais;
+import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Repository;
 
-public interface InformacoesPessoaisRepository extends JpaRepository<InformacoesPessoais, Long> {
+@Repository
+public interface InformacoesPessoaisRepository extends CrudRepository<InformacoesPessoais, Long> {
+    // Métodos adicionais podem ser adicionados se necessário
 }

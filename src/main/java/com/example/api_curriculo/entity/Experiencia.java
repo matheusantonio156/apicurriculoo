@@ -5,18 +5,18 @@ import lombok.Data;
 
 @Data
 @Entity
-@Table(name = "experiencia") // Nome da tabela no banco de dados
+@Table(name = "experiencia")
 public class Experiencia {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY) // Geração automática do ID
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String descricao;  // Descrição da experiência
-    private String nome;       // Nome do cargo ou posição
-    private String idade;      // Idade da pessoa
-    private String endereco;   // Endereço da pessoa
-    private String curso;      // Curso ou formação da pessoa (se necessário)
+    private String cargo; // Nome do cargo
+    private String empresa; // Nome da empresa
+    private String dataInicio; // Data de início
+    private String dataFim; // Data de fim
+    private String descricao; // Descrição da experiência
 
-    // Getters e Setters são gerados automaticamente pelo Lombok
 }
+

@@ -1,4 +1,4 @@
-ppackage com.example.api_curriculo.entity;
+package com.example.api_curriculo.entity;
 
 import jakarta.persistence.*;
 import lombok.Data;
